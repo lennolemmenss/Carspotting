@@ -35,7 +35,7 @@
                     <h3 class="text-lg font-semibold mb-2">{{ __('Birthday') }}</h3>
                     <p>{{ auth()->user()->birthday }}</p>
                 </div>
-
+                <x-primary-button class="edit-button">{{ __('Edit') }}</x-primary-button>
             </div>
         </div>
     </div>

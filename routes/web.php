@@ -32,7 +32,7 @@ Route::get('/user', function () {
 
 //admin hoofdpagina
 Route::get('/admin', function () {
-    return view('admin');
+    return view('admin.create');
 })->name('admin');
 
 

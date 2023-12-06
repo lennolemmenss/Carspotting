@@ -18,13 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Home pagina met berichten
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+// Profiel pagina van eigen user
 Route::get('/user', function () {
     return view('user');
 })->name('user');
+
+//admin hoofdpagina
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
 
 
 Route::middleware('auth')->group(function () {

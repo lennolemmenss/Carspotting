@@ -15,7 +15,7 @@ class AdminSeeder extends Seeder
             'email' => 'admin@ehb.be',
             'password' => Hash::make('Password!321'),
             'email_verified_at' => now(),
-            'is_admin' => true
+            // 'is_admin' => true
         ]);
     }
 }

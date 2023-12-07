@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +32,7 @@ Route::get('/user', function () {
     return view('user');
 })->name('user');
 
-//admin hoofdpagina
+//admin hoofdpagina (creeën van een post)
 Route::get('/admin', function () {
     return view('admin.create');
 })->name('admin');
@@ -41,5 +43,16 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+// opslaan van posts 
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+
+
+// Berichten weergeven op het dasboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';

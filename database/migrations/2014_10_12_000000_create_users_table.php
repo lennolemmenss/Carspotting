@@ -23,6 +23,10 @@ return new class extends Migration
             $table->text('about_me')->nullable();
             $table->text('avatar')->nullable();
 
+
+            // Verficatie of een user admin is of niet
+            $table->boolean('is_admin');
+
             $table->rememberToken();
             $table->timestamps();
         });

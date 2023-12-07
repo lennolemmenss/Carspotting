@@ -15,7 +15,7 @@ return new class extends Migration
              $table->id();
              $table->string('title');
              $table->text('content');
-             $table->string('cover_image')->nullable(); // Added cover image column
+             $table->text('cover_image')->nullable(); // Added cover image column
              $table->unsignedBigInteger('user_id');
              $table->timestamps();
              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

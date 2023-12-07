@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'content', 'cover_image', 'publishing_date', 'user_id'];
+    protected $fillable = ['title', 'content', 'cover_image', 'user_id'];
 
     protected static function boot()
     {
@@ -18,7 +18,6 @@ class Post extends Model
 
         static::creating(function ($post) {
             $post->user_id = Auth::id(); // Set the user ID
-            $post->publishing_date = now(); // Set the current timestamp as the publishing date
         });
     }
 

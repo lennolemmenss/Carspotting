@@ -11,6 +11,6 @@
             @include('profile.partials.message', ['post' => $post])
             <br>
         @endforeach
-        
+    
     </div>
 </x-app-layout>

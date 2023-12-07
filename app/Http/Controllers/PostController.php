@@ -13,21 +13,25 @@ class PostController extends Controller
     // }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required',
-           
-        ]);
+{
+    $request->validate([
+        'title' => 'required|max:255',
+        'content' => 'required',
+        'cover-image' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048', // Add validation for image file
+    ]);
 
-        $post = Post::create([
-            'title' => $request->input('title'),
-            'content' => $request->input('content'),
-            'cover_image' => $request->input('cover_image'), 
-        ]);
+    $coverImage = $request->file('cover-image'); // Use 'cover-image' as the key
 
+    // Store the uploaded file in the 'public/storage' directory
+    $coverImagePath = $coverImage->store('uploads', 'public');
 
-        return redirect()->route('dashboard', $post->id)
-            ->with('success', 'Post created successfully!');
+    $post = Post::create([
+        'title' => $request->input('title'),
+        'content' => $request->input('content'),
+        'cover_image' => $coverImagePath,
+    ]);
+
+    return redirect()->route('admin')
+        ->with('success', 'Post created successfully!');
     }
 }

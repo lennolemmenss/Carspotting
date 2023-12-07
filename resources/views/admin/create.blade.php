@@ -10,17 +10,8 @@
                 <div class="card-header">{{ __('New Post') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('posts.store') }}">
+                    <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
                         @csrf
-                        
-
-                        {{-- Naam wordt automatisch toegevoegd dus niet nodig voor het moment  --}}
-
-                        {{-- 
-                        <div class="mb-3">
-                            <label for="name" class="form-label">{{ __('Naam') }}</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div> --}}
 
                         <div class="mb-3">
                             <label for="title" class="form-label">{{ __('Title') }}</label>
@@ -36,9 +27,6 @@
                         <div>
                             <x-input-label for="avatar" :value="__('Image')" />
                             <input type="file" name="cover-image" class="mt-1 block w-full" accept="image/*"/>
-                            {{-- @if ($user->avatar)
-                                <img src="{{ asset($user->avatar) }}" alt="Avatar" class="mt-2 rounded-full h-20 w-20 object-cover">
-                            @endif --}}
                             <x-input-error class="mt-2" :messages="$errors->get('avatar')" />
                         </div>
 

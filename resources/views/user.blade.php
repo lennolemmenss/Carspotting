@@ -14,7 +14,7 @@
                             <img src="{{ asset('storage/' . auth()->user()->avatar) }}" alt="Avatar" class="w-20 h-20 rounded-full mr-4">
                         @else
                             <!-- Wanneer er geen avatar is wordt de default avatar gebruikt -->
-                            <img src="{{ asset('path/to/default/avatar.jpg') }}" alt="Default Avatar" class="w-12 h-12 rounded-full mr-4">
+                            <img src="{{ asset('images/default_avatar.webp') }}" alt="Default Avatar" class="w-20 h-20 rounded-full mr-4">
                         @endif
                         <div>
                             <h2 class="text-xl font-semibold">{{ auth()->user()->name }}</h2>

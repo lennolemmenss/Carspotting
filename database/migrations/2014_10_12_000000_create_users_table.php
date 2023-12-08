@@ -25,7 +25,7 @@ return new class extends Migration
 
 
             // Verficatie of een user admin is of niet
-            // $table->boolean('is_admin');
+            $table->boolean('is_admin');
 
             $table->rememberToken();
             $table->timestamps();

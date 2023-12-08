@@ -86,4 +86,6 @@ Route::patch('/posts/{id}', [PostController::class, 'update'])->name('posts.upda
 Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 
+Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');
+
 require __DIR__.'/auth.php';

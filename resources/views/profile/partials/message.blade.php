@@ -55,7 +55,9 @@
     <div class="post-card">
         <div class="post-header">
             <div>
-                <strong>{{ $post->user->name }}</strong>
+                <a href="{{ route('profile.show', $post->user->id) }}">
+                    {{ $post->user->name }}
+                </a>
                 <br>
                 <span class="text-muted">{{ $post->created_at->diffForHumans() }}</span>
             </div>

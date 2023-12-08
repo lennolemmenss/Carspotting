@@ -7,42 +7,79 @@
     <title>Inzending Details</title>
     <!-- Voeg Bootstrap CSS toe -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .post-card {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .post-header img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .post-content {
+            margin-bottom: 20px;
+        }
+
+        .post-image {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .edit-button {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="card mb-3"> <!--mb-3 zorgt voor spatie tussen de berichten -->
-        <div class="card-header">
-            <h5 class="card-title">Bericht {{ $post->id }}</h5>
+    <div class="post-card">
+        <div class="post-header">
+            <div>
+                <strong>{{ $post->user->name }}</strong>
+                <br>
+                <span class="text-muted">{{ $post->created_at->diffForHumans() }}</span>
+            </div>
+            <img src="{{ asset('storage/' . $post->user->avatar) }}" alt="User Avatar" style="height: 40px;">
         </div>
-        <div class="card-body">
-            <div class="mb-3">
-                <strong>Naam:</strong> {{ $post->user->name }}
-            </div>
-            <div class="mb-3">
-                <strong>Titel:</strong> {{ $post->title }}
-            </div>
-            <div class="mb-3">
-                <strong>Bericht:</strong>
-                <p>{{ $post->content }}</p>
-            </div>
-            <div class="mb-3">
-                <strong>Publicatiedatum:</strong> {{ $post->created_at->diffForHumans() }}
-            </div>
-            
-            @if ($post->cover_image)
-                <div class="mb-3">
-                    <strong>Cover Image:</strong>
-                    <img src="{{ asset('storage/' . $post->cover_image) }}" alt="Cover Image" class="img-fluid">
-                </div>
-            @endif
 
 
-            @if (auth()->check() && auth()->user()->is_admin)
-            <div class="mt-3">
+
+        <div class="post-content">
+            <h4>{{ $post->title }}</h4>
+            <p>{{ $post->content }}</p>
+        </div>
+
+        @if ($post->cover_image)
+            <div class="mb-3">
+                <img src="{{ asset('storage/' . $post->cover_image) }}" alt="Cover Image" class="post-image">
+            </div>
+        @endif
+
+        @if (auth()->check() && auth()->user()->is_admin)
+            <div class="edit-button">
                 <a href="{{ route('admin.edit', $post->id) }}" class="btn btn-primary">Edit</a>
             </div>
-             @endif
-        </div>
+        @endif
     </div>
 
     <!-- Voeg Bootstrap JS en Popper.js toe (vereist voor sommige Bootstrap-functies) -->

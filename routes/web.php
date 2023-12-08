@@ -42,6 +42,15 @@ Route::get('/user', function () {
     return view('user');
 })->name('user');
 
+Route::get('/FAQ', function () {
+    return view('FAQ');
+})->name('FAQ');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+
 // Admin pagina voor het creëren van een post
 Route::get('/admin/create', function () {
     return view('admin.create');

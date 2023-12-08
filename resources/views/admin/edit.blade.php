@@ -1,17 +1,50 @@
+<!-- edit.blade.php -->
 
 @extends('layouts.admin')
 
 @section('content')
-    <h2>Edit Item</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Edit Post') }}</div>
 
-    <form method="POST" action="{{ route('edit.post') }}">
-        @csrf
-        <label for="title">Title:</label>
-        <input type="text" name="title" required>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('posts.update', $post->id) }}" enctype="multipart/form-data">
+                        @csrf
+                        @method('PATCH') 
 
-        <label for="content">Content:</label>
-        <textarea name="content" required></textarea>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">{{ __('Title') }}</label>
+                            <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $post->title) }}" required>
+                        </div>
 
-        <button type="submit">Edit Item</button>
-    </form>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">{{ __('Content') }}</label>
+                            <textarea class="form-control" id="content" name="content" rows="4" required>{{ old('content', $post->content) }}</textarea>
+                        </div>
+
+                        <div>
+                            <x-input-label for="avatar" :value="__('Image')" />
+                            <input type="file" name="cover-image" class="mt-1 block w-full" accept="image/*"/>
+                            @if ($post->cover_image)
+                                <div class="mt-2">
+                                    <strong>Current Cover Image:</strong>
+                                    <img src="{{ asset('storage/' . $post->cover_image) }}" alt="Current Cover Image" class="img-fluid">
+                                </div>
+                            @endif
+                            <x-input-error class="mt-2" :messages="$errors->get('avatar')" />
+                        </div>
+
+                        <br>
+
+                        {{-- Additional fields or modifications as needed --}}
+
+                        <button style="font-weight: 500" type="submit" class="btn btn-primary">{{ __('Update') }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

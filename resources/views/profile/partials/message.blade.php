@@ -35,6 +35,13 @@
                     <img src="{{ asset('storage/' . $post->cover_image) }}" alt="Cover Image" class="img-fluid">
                 </div>
             @endif
+
+
+            @if (auth()->check() && auth()->user()->is_admin)
+            <div class="mt-3">
+                <a href="{{ route('admin.edit', $post->id) }}" class="btn btn-primary">Edit</a>
+            </div>
+             @endif
         </div>
     </div>
 

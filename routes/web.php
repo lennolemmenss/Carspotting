@@ -42,11 +42,20 @@ Route::get('/user', function () {
     return view('user');
 })->name('user');
 
-//admin hoofdpagina (creeën van een post)
-Route::get('/admin', function () {
+// Admin pagina voor het creëren van een post
+Route::get('/admin/create', function () {
     return view('admin.create');
-})->middleware('admin')->name('admin');
+})->middleware('admin')->name('admin.create');
 
+// Admin pagina voor het wijzigen of verwijderen van een post
+// Route::get('/admin/edit', function () {
+//     return view('admin.edit');
+// })->middleware('admin')->name('admin.edit');
+
+// individuele posts
+Route::get('/admin/edit/{id}', [PostController::class, 'edit'])
+    ->middleware('admin')
+    ->name('admin.edit');
 
 
 
@@ -57,9 +66,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// opslaan van posts 
+// Opslaan van nieuwe post
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
+
+Route::patch('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
 
 require __DIR__.'/auth.php';

@@ -70,7 +70,11 @@ Route::middleware('auth')->group(function () {
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
-
+// Wijzigen van een post
 Route::patch('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+
+// Verwijderen van een post
+Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+
 
 require __DIR__.'/auth.php';

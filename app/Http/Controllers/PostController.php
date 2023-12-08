@@ -57,8 +57,17 @@ class PostController extends Controller
     $post->content = $request->input('content');
     $post->save();
 
-    return redirect()->route('admin.edit', $post->id)
-        ->with('success', 'Post updated successfully!');
+    return redirect()->route('dashboard') // Redirect to the dashboard route
+    ->with('success', 'Post updated successfully!');
+    }
+
+
+    public function destroy($id)
+    {
+    $post = Post::findOrFail($id);
+    $post->delete();
+
+    return redirect()->route('dashboard')->with('success', 'Post deleted successfully!');
     }
 
 }

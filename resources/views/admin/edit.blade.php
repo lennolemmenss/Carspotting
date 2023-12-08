@@ -41,6 +41,18 @@
                         {{-- Additional fields or modifications as needed --}}
 
                         <button style="font-weight: 500" type="submit" class="btn btn-primary">{{ __('Update') }}</button>
+
+
+                        {{-- Delete button --}}
+                        <form method="POST" action="{{ route('posts.destroy', $post->id) }}" class="mt-3">
+                         @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?')">
+                        {{ __('Delete Post') }}
+                        </button>
+
+
+
                     </form>
                 </div>
             </div>

@@ -27,7 +27,7 @@ class PostController extends Controller
         'cover_image' => $coverImagePath,
     ]);
 
-    return redirect()->route('dashboard')
+    return redirect('dashboard')
         ->with('success', 'Post created successfully!');
     }
 

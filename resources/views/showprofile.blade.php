@@ -7,12 +7,9 @@
         </h2>
     </x-slot>
 
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Profile Information</h5>
-            </div>
-            <div class="card-body">
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                 <div class="mb-3">
                     <strong>Name:</strong> {{ $user->name }}
                 </div>
@@ -22,12 +19,7 @@
                 <div class="mb-3">
                     <strong>Joined:</strong> {{ $user->created_at }}
                 </div>
-                <!-- Add more profile information as needed -->
             </div>
         </div>
     </div>
-
-    
-    </div>
 </x-app-layout>
-

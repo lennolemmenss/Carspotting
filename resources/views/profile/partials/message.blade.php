@@ -31,6 +31,11 @@
             margin-bottom: 10px;
         }
 
+        .post-header a.profile-link {
+            text-decoration: none; /* Remove underline */
+            color: #007bff; /* Set the desired color for the link */
+        }
+
         .post-header img {
             border-radius: 50%;
             margin-right: 10px;
@@ -55,7 +60,7 @@
     <div class="post-card">
         <div class="post-header">
             <div>
-                <a href="{{ route('profile.show', $post->user->id) }}">
+                <a href="{{ route('profile.show', $post->user->id) }}" class="profile-link">
                     {{ $post->user->name }}
                 </a>
                 <br>

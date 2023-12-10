@@ -23,8 +23,6 @@ Route::get('/', function () {
 });
 
 
-
-// web.php
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -35,19 +33,30 @@ Route::get('/user', function () {
     return view('user');
 })->name('user');
 
+//FAQ pagina
 Route::get('/FAQ', function () {
     return view('FAQ');
 })->name('FAQ');
 
+//contact pagina
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
 
+
+
 //Admin Hoofdpagina
 Route::get('/admin', function () {
     return view('admin.home');
-})->middleware('admin')->name('home');
+})->middleware('admin')->name('admin.home');
+
+//Admin inbox pagina
+Route::get('/admin/inbox', [MailController::class, 'inbox'])->name('admin.inbox');
+
+//Admin inbox pagina bericht verwijderen
+
+Route::delete('/inbox/{id}', [MailController::class, 'delete'])->name('inbox.delete');
 
 
 

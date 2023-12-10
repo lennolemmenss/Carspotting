@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+
     <div class="container mt-5">
         {{-- Check if the authenticated user is an admin --}}
         @if (auth()->check() && auth()->user()->is_admin)

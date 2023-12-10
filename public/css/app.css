@@ -5,3 +5,12 @@
 .edit-button {
     margin-left: 93%;
 }
+
+    .btn-hover {
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-hover:hover {
+        background-color: #007bff; /* Verander dit naar de gewenste achtergrondkleur */
+        border-color: #007bff; /* Verander dit naar de gewenste borderkleur */
+    }

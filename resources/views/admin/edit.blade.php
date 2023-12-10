@@ -1,4 +1,3 @@
-<!-- edit.blade.php -->
 
 @extends('layouts.admin')
 

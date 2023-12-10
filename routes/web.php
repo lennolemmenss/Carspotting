@@ -23,14 +23,6 @@ Route::get('/', function () {
 });
 
 
-// Home pagina met berichten
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// // Berichten weergeven op het dasboard
-// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 
 // web.php
 Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -52,21 +44,23 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+//Admin Hoofdpagina
+Route::get('/admin', function () {
+    return view('admin.home');
+})->middleware('admin')->name('home');
+
+
+
 // Admin pagina voor het creëren van een post
 Route::get('/admin/create', function () {
     return view('admin.create');
 })->middleware('admin')->name('admin.create');
 
-// Admin pagina voor het wijzigen of verwijderen van een post
-// Route::get('/admin/edit', function () {
-//     return view('admin.edit');
-// })->middleware('admin')->name('admin.edit');
 
-// individuele posts
+// individuele posts wijzigen
 Route::get('/admin/edit/{id}', [PostController::class, 'edit'])
     ->middleware('admin')
     ->name('admin.edit');
-
 
 
 Route::middleware('auth')->group(function () {
@@ -74,6 +68,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
+
 
 
 // Opslaan van nieuwe post

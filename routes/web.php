@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MailController;
 
 
 /*
@@ -85,7 +86,10 @@ Route::patch('/posts/{id}', [PostController::class, 'update'])->name('posts.upda
 // Verwijderen van een post
 Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-
+// Weergeven van een bepaalde user zijn profiel
 Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');
+
+
+Route::post('/contact', [MailController::class, 'store'])->name('contact.store');
 
 require __DIR__.'/auth.php';

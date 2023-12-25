@@ -5,6 +5,8 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\FAQCategoryController;
+use App\Http\Controllers\FAQitemController;
 
 
 /*
@@ -34,9 +36,9 @@ Route::get('/user', function () {
 })->name('user');
 
 //FAQ pagina
-Route::get('/FAQ', function () {
-    return view('FAQ');
-})->name('FAQ');
+Route::get('/FAQ', [FAQitemController::class, 'ShowFAQ'] )->name('FAQ');
+
+
 
 //contact pagina
 Route::get('/contact', function () {
@@ -55,7 +57,6 @@ Route::get('/admin', function () {
 Route::get('/admin/inbox', [MailController::class, 'inbox'])->name('admin.inbox');
 
 //Admin inbox pagina bericht verwijderen
-
 Route::delete('/inbox/{id}', [MailController::class, 'delete'])->name('inbox.delete');
 
 
@@ -66,10 +67,18 @@ Route::get('/admin/create', function () {
 })->middleware('admin')->name('admin.create');
 
 
-// individuele posts wijzigen
-Route::get('/admin/edit/{id}', [PostController::class, 'edit'])
-    ->middleware('admin')
-    ->name('admin.edit');
+// Admin pagina voor wijzigen van individuele posts
+Route::get('/admin/edit/{id}', [PostController::class, 'edit'])->middleware('admin')->name('admin.edit');
+
+
+// Admin pagina voor het creëren van FAQ questions en categorieeën
+Route::get('/admin/create_question', [FAQCategoryController::class, 'showForm'])->middleware('admin')->name('admin.create_faq');
+
+// web.php
+
+Route::post('admin/faq', [FAQItemController::class, 'store'])->middleware('admin')->name('faq.store');
+
+
 
 
 Route::middleware('auth')->group(function () {
@@ -77,9 +86,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
-
 
 
 

@@ -29,6 +29,14 @@
 
             <div class="card shadow p-4" style="max-width: 300px; margin: 10px;">
                 <div class="card-body text-center">
+                    <h5 class="card-title">Create a FAQ question</h5>
+                    <p class="card-text">Click the button below to Create a FAQ question.</p>
+                    <a href="{{ route('admin.create_faq') }}" class="btn btn-primary btn-hover">Create Question</a>
+                </div>
+            </div>
+
+            <div class="card shadow p-4" style="max-width: 300px; margin: 10px;">
+                <div class="card-body text-center">
                     <h5 class="card-title">Check inbox</h5>
                     <p class="card-text">Click the button below to check messages.</p>
                     <a href="{{ route('admin.inbox') }}" class="btn btn-primary btn-hover">Check Messages</a>

@@ -23,13 +23,13 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Edit Post</h5>
                     <p class="card-text">Click the button below to edit an existing post.</p>
-                    <a href="#" class="btn btn-primary btn-hover">Edit Post</a>
+                    <a href="{{route('dashboard')}}" class="btn btn-primary btn-hover">Edit Post</a>
                 </div>
             </div>
 
             <div class="card shadow p-4" style="max-width: 300px; margin: 10px;">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Create a FAQ question</h5>
+                    <h5 class="card-title">Create FAQ Questions or Categories</h5>
                     <p class="card-text">Click the button below to Create a FAQ question.</p>
                     <a href="{{ route('admin.create_faq') }}" class="btn btn-primary btn-hover">Create Question</a>
                 </div>

@@ -13,8 +13,18 @@ class FAQCategory extends Model
         'name',
     ];
 
+    // public function faqItems()
+    // {
+    //     return $this->hasMany(FAQItem::class);
+    // }
+
     public function faqItems()
     {
-        return $this->hasMany(FAQItem::class);
+        return $this->hasMany(FAQItem::class, 'faq_category_id');
+    }
+
+    public function items()
+    {
+        return $this->hasMany(FAQItem::class, 'faq_category_id');
     }
 }

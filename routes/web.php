@@ -71,12 +71,33 @@ Route::get('/admin/create', function () {
 Route::get('/admin/edit/{id}', [PostController::class, 'edit'])->middleware('admin')->name('admin.edit');
 
 
+
+
 // Admin pagina voor het creëren van FAQ questions en categorieeën
 Route::get('/admin/create_question', [FAQCategoryController::class, 'showForm'])->middleware('admin')->name('admin.create_faq');
 
-// web.php
+Route::post('/admin/create_faq', [FAQCategoryController::class, 'store'])->name('admin.store_faq_category');
 
+Route::delete('/admin/faq/category/{id}', [FAQCategoryController::class, 'destroy'])->middleware('admin')->name('admin.delete_faq_category');
+
+
+
+// Admin pagina voor het opslaan van FAQ questions en categorieeën
 Route::post('admin/faq', [FAQItemController::class, 'store'])->middleware('admin')->name('faq.store');
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/faq/{faqItem}/edit', [FAQItemController::class, 'edit'])->name('faq.edit');
+});
+
+Route::patch('/faq/{faqItem}', [FAQItemController::class, 'update'])->name('faq.update');
+
+Route::delete('/faq/{faqItem}', [FAQItemController::class, 'destroy'])->name('faq.destroy');
+
+
+
+
+
 
 
 

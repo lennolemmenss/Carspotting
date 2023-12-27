@@ -21,4 +21,6 @@ class FAQItem extends Model
         return $this->belongsTo(FAQCategory::class);
     }
 
+    
+
 }

@@ -72,7 +72,11 @@
             <h5 class="card-title">{{ $faqItem->question }}</h5>
             <p class="card-text">{{ $faqItem->answer }}</p>
             <p class="card-text"><small class="text-muted">{{ $faqItem->faqCategory->name}}</small></p>
-            <a href="#" class="btn btn-primary edit-button">Edit</a>
+           
+
+            @if (auth()->check() && auth()->user()->is_admin)
+            <a href="{{ route('faq.edit', ['faqItem' => $faqItem]) }}" class="btn btn-primary edit-button">Edit</a>
+            @endif
         </div>
     </div>
 </div>

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->text('avatar')->nullable();
 
 
-            // Verficatie of een user admin is of niet
+            // Verficatie of een user admin is of niet (default false)
             $table->boolean('is_admin');
 
             $table->rememberToken();

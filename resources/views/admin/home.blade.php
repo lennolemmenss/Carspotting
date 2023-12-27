@@ -19,13 +19,7 @@
                 </div>
             </div>
 
-            <div class="card shadow p-4" style="max-width: 300px; margin: 10px;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Edit Post</h5>
-                    <p class="card-text">Click the button below to edit an existing post.</p>
-                    <a href="{{route('dashboard')}}" class="btn btn-primary btn-hover">Edit Post</a>
-                </div>
-            </div>
+
 
             <div class="card shadow p-4" style="max-width: 300px; margin: 10px;">
                 <div class="card-body text-center">
@@ -42,6 +36,16 @@
                     <a href="{{ route('admin.inbox') }}" class="btn btn-primary btn-hover">Check Messages</a>
                 </div>
             </div>
+
+
+            <div class="card shadow p-4" style="max-width: 300px; margin: 10px;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Promote to Admin</h5>
+                    <p class="card-text">Click the button below to promote.</p>
+                    <a href="{{ route('admin.promote') }}" class="btn btn-primary btn-hover">Promote</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

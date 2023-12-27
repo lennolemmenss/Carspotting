@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\FAQCategoryController;
 use App\Http\Controllers\FAQitemController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -60,7 +61,6 @@ Route::get('/admin/inbox', [MailController::class, 'inbox'])->name('admin.inbox'
 Route::delete('/inbox/{id}', [MailController::class, 'delete'])->name('inbox.delete');
 
 
-
 // Admin pagina voor het creëren van een post
 Route::get('/admin/create', function () {
     return view('admin.create');
@@ -96,12 +96,21 @@ Route::delete('/faq/{faqItem}', [FAQItemController::class, 'destroy'])->name('fa
 
 
 
+//promoten
+Route::get('/admin/promote', [AdminController::class, 'showPromotionForm'])->middleware('admin')->name('admin.promote');
+
+Route::post('/admin/promote', [AdminController::class, 'submitPromotionForm'])->middleware('admin')->name('admin.promote.submit');
 
 
 
 
 
 
+
+
+
+
+// Updaten van profielen
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

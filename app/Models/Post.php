@@ -16,10 +16,16 @@ class Post extends Model
     {
         parent::boot();
 
-        static::creating(function ($post) {
-            $post->user_id = Auth::id(); // Set the user ID
-        });
-    }
+    //     static::creating(function ($post) {
+    //         $post->user_id = Auth::id(); 
+    //     });
+    // }
+
+    static::creating(function ($post) {
+        $user = Auth::user();
+        $post->user_id = $user ? $user->id : 1; // Stel de user_id in op de ingelogde gebruiker of gebruik een standaardwaarde (bijv. 1).
+    });
+}
 
     public function user()
     {

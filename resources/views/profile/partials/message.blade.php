@@ -66,7 +66,11 @@
                 <br>
                 <span class="text-muted">{{ $post->created_at->diffForHumans() }}</span>
             </div>
-            <img src="{{ asset('storage/' . $post->user->avatar) }}" alt="User Avatar" style="height: 40px;">
+            @if ($post->user->avatar && file_exists(public_path("storage/" . $post->user->avatar)))
+                <img src="{{ asset('storage/' . $post->user->avatar) }}" alt="User Avatar" style="height: 40px;">
+            @else
+                <img src="{{ asset('images/default_avatar.webp') }}" alt="Default Avatar" style="height: 40px;">
+            @endif
         </div>
 
 

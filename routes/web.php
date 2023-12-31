@@ -48,6 +48,12 @@ Route::get('/contact', function () {
 
 
 
+//contact pagina
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+
 
 //Admin Hoofdpagina
 Route::get('/admin', function () {
@@ -100,7 +106,6 @@ Route::delete('/faq/{faqItem}', [FAQItemController::class, 'destroy'])->name('fa
 Route::get('/admin/promote', [AdminController::class, 'showPromotionForm'])->middleware('admin')->name('admin.promote');
 
 Route::post('/admin/promote', [AdminController::class, 'submitPromotionForm'])->middleware('admin')->name('admin.promote.submit');
-
 
 
 

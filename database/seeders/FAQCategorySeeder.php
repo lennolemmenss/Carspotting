@@ -12,12 +12,19 @@ class FAQCategorySeeder extends Seeder
     {
         // Define the categories
         $categories = [
-            ['name' => 'General'],
-            ['name' => 'Technical'],
-            ['name' => 'Billing'],
+            ['name' => 'Vehicle Identification'],
+            ['name' => 'Spotting Locations'],
+            ['name' => 'Photography Tips'],
+            ['name' => 'Event Participation'],
+            ['name' => 'Membership'],
+            ['name' => 'Car Spotting Etiquette'],
+            ['name' => 'Spotting Challenges'],
+            ['name' => 'Featured Cars'],
+            ['name' => 'Social Media Sharing'],
+            ['name' => 'Technical Issues'],
             // Add more categories as needed
         ];
-
+        
         // Insert the categories into the database
         FAQCategory::insert($categories);
     }

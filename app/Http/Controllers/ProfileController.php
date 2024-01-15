@@ -34,7 +34,7 @@ class ProfileController extends Controller
 
         $user->fill($request->validated());
     
-        // Check if email is updated, reset email_verified_at
+        // Check if email is updated, anders null
         if ($user->isDirty('email')) {
             $user->email_verified_at = null;
         }
@@ -44,7 +44,7 @@ class ProfileController extends Controller
         $user->about_me = $request->input('about_me');
 
         if ($request->hasFile('avatar')) {
-            $avatarPath = $request->file('avatar')->store('avatars', 'public'); // Adjust the storage path
+            $avatarPath = $request->file('avatar')->store('avatars', 'public'); 
             $user->avatar = $avatarPath;
             Log::info('Avatar uploaded successfully. Path: ' . $avatarPath);
         }

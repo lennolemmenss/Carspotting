@@ -10,7 +10,6 @@ class FAQCategorySeeder extends Seeder
 {
     public function run()
     {
-        // Define the categories
         $categories = [
             ['name' => 'Vehicle Identification'],
             ['name' => 'Spotting Locations'],
@@ -22,10 +21,8 @@ class FAQCategorySeeder extends Seeder
             ['name' => 'Featured Cars'],
             ['name' => 'Social Media Sharing'],
             ['name' => 'Technical Issues'],
-            // Add more categories as needed
         ];
         
-        // Insert the categories into the database
         FAQCategory::insert($categories);
     }
 }

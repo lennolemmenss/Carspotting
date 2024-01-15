@@ -18,7 +18,6 @@ class MailController extends Controller
 
         Mail::create($validatedData);
 
-        // You can add a flash message or redirect the user to a thank you page
         return redirect()->route('contact')->with('success', 'Your message has been submitted!');
     }
 

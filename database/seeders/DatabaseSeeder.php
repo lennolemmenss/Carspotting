@@ -18,17 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Call your custom seeders here
         $this->call([
             AdminSeeder::class,
             FAQCategorySeeder::class,
             FAQItemSeeder::class,
             PostSeeder::class,
 
-            // Add more seeders as needed
         ]);
 
-        // You can also use model factories if needed
-        // \App\Models\User::factory(10)->create();
+        
     }
 }

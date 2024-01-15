@@ -13,12 +13,12 @@ class PostController extends Controller
     $request->validate([
         'title' => 'required|max:255',
         'content' => 'required',
-        'cover-image' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048', // Add validation for image file
+        'cover-image' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
     ]);
 
-    $coverImage = $request->file('cover-image'); // Use 'cover-image' as the key
+    $coverImage = $request->file('cover-image'); 
 
-    // Store the uploaded file in the 'public/storage' directory
+    // slaag op in 'public/storage' directory
     $coverImagePath = $coverImage->store('uploads', 'public');
 
     $post = Post::create([
@@ -57,7 +57,7 @@ class PostController extends Controller
     $post->content = $request->input('content');
     $post->save();
 
-    return redirect()->route('dashboard') // Redirect to the dashboard route
+    return redirect()->route('dashboard')
     ->with('success', 'Post updated successfully!');
     }
 

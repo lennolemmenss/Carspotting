@@ -15,8 +15,6 @@
 
 
 
-  
-    <!-- Rest van je index-pagina -->
     <h2>Welcome to the Admin Page</h2>
 
   @section('content')

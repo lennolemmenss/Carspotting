@@ -13,14 +13,13 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Sample User',
             'email' => 'sample@example.com',
-            'password' => bcrypt('password'), // You can change this password
-            'birthday' => '1990-01-01', // Adjust as needed
+            'password' => bcrypt('password'), 
+            'birthday' => '1990-01-01',
             'about_me' => 'This is a sample user.',
-            'avatar' => null, // You can modify this based on your needs
+            'avatar' => null, 
             'is_admin' => false,
         ]);
     
 
-        // You can create more users as needed
     }
 }

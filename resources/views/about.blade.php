@@ -61,6 +61,7 @@
                         <li><a href="https://www.tutorialspoint.com/laravel/index.html" target="_blank">- TutorialsPoint Laravel Tutorial</a></li>
                         <li><a href="https://medium.com/@miladev95/laravel-resource-controllers-6c8fc6d03dc7" target="_blank">- Medium: Laravel Resource Controllers</a></li>
                         <li><a href="https://www.tutorialspoint.com/laravel/laravel_controllers.html" target="_blank">- TutorialsPoint Laravel Controllers</a></li>
+                        <li><a href="https://www.chatGPT.com" target="_blank">- ChatGPT</a></li>
                     </ul>
     
             </div>

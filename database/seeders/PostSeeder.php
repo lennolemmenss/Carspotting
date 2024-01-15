@@ -118,6 +118,72 @@ class PostSeeder extends Seeder
             'user_id' => $admin_user,
             'cover_image' => 'uploads/porsche-taycan.jpg',
         ]);
+
+
+        Post::create([
+            'title' => 'Chevrolet Corvette ZR1',
+            'content' => 'The Chevrolet Corvette ZR1 is an iconic American sports car, known for its powerful performance and sleek design, a real head-turner on the road.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/chevrolet-corvette-zr1.jpg',
+        ]);
+        
+        Post::create([
+            'title' => 'Jaguar F-Type',
+            'content' => 'The Jaguar F-Type is a luxury sports car that combines elegance with impressive performance, a symbol of British automotive craftsmanship.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/jaguar-f-type.jpg',
+        ]);
+        
+        Post::create([
+            'title' => 'Tesla Roadster',
+            'content' => 'The Tesla Roadster sets a new standard for electric supercars with its exceptional acceleration and advanced technology, a paragon of modern innovation.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/tesla-roadster.jpg',
+        ]);
+        
+        Post::create([
+            'title' => 'Maserati GranTurismo',
+            'content' => 'The Maserati GranTurismo combines elegant Italian design with powerful performance, making it one of the most desirable sports cars on the market.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/maserati-granturismo.jpg',
+        ]);
+
+        Post::create([
+            'title' => 'Hennessy Venom GT',
+            'content' => 'The Hennessy Venom GT, famous for its exceptional speed and agility, boasts a unique combination of lightweight design and a turbocharged engine, offering an unmatched driving experience.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/hennessy-venom-gt.jpg',
+        ]);
+
+        Post::create([
+            'title' => 'Rolls-Royce Wraith',
+            'content' => 'The Rolls-Royce Wraith is the epitome of luxury and elegance, offering a serene driving experience with its powerful V12 engine and sumptuous interior, embodying the height of automotive luxury.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/rolls-royce-wraith.jpg',
+        ]);
+        
+        Post::create([
+            'title' => 'Bentley Continental GT',
+            'content' => 'The Bentley Continental GT combines luxury with performance, featuring a sophisticated design, a plush interior, and a potent W12 engine, making it a pinnacle of British automotive craftsmanship.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/bentley-continental-gt.jpg',
+        ]);
+        
+        Post::create([
+            'title' => 'Alfa Romeo Giulia Quadrifoglio',
+            'content' => 'The Alfa Romeo Giulia Quadrifoglio is a high-performance Italian sports sedan, known for its exhilarating driving dynamics, stylish design, and a powerful twin-turbo V6 engine, marking a renaissance for the Alfa Romeo brand.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/alfa-romeo-giulia-quadrifoglio.jpg',
+        ]);
+
+        Post::create([
+            'title' => 'Aston Martin DBS Superleggera',
+            'content' => 'The Aston Martin DBS Superleggera is a blend of elegance and sheer power. With its 5.2-liter twin-turbo V12 engine, it delivers breathtaking performance and speed, while maintaining the sophistication and luxury synonymous with the Aston Martin brand.',
+            'user_id' => $admin_user,
+            'cover_image' => 'uploads/aston-martin-dbs-superleggera.jpg',
+        ]);
+        
+      
      
     }
 

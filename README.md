@@ -23,6 +23,9 @@ CarSpotting is een dynamische webapplicatie voor autoliefhebbers, gericht op het
 
 Ga naar de projectmap en voer `php artisan migrate:fresh --seed` uit om je database te vullen met dummy data.
 
+**Het is essentieel om deze stap uit te voeren voordat er naar de volgende stap kan worden gegaan**
+
+
 
 ## Running the Application
 

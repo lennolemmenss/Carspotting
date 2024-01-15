@@ -47,6 +47,8 @@
 
         .post-image {
             max-width: 100%;
+            height: 320px; /* Stel hier de gewenste hoogte in */
+            object-fit: cover; /* Behoud de aspect ratio zonder vervorming */
             border-radius: 10px;
         }
 

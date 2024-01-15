@@ -5,33 +5,39 @@
         </h2>
     </x-slot>
 
-    <div class="container mt-10">
-        <div class="mb-5 text-end">
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
+                <div class="mb-5 text-center">
+                    <h2 class="text-2xl font-semibold text-gray-900">
+                        Contact Us</h2>
+                    <p class="text-lg text-gray-600">We would like to hear from you!</p>
+                </div>
 
-            <div class="card-header bg-primary text-white text-center">
-                <h2 class="card-title text-2xl">Contact Us</h2>
-            </div>
-            <div class="card-body">
-                <form method="POST" action="{{ route('contact.store') }}">
+                <form method="POST" action="{{ route('contact.store') }}" class="space-y-6">
                     @csrf
-                    <div class="mb-4">
-                        <label for="name" class="form-label text-lg">Your Name</label>
-                        <input type="text" class="form-control py-2 px-3 rounded-lg" id="name" name="name" required>
+                    <div>
+                        <label for="name" class="block text-lg font-medium text-gray-700">Name</label>
+                        <input type="text" name="name" id="name" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
 
-                    <div class="mb-4">
-                        <label for="email" class="form-label text-lg">Your Email</label>
-                        <input type="email" class="form-control py-2 px-3 rounded-lg" id="email" name="email" required>
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700">E-mail</label>
+                        <input type="email" name="email" id="email" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
 
-                    <div class="mb-4">
-                        <label for="message" class="form-label text-lg">Message</label>
-                        <textarea class="form-control py-3 px-4 rounded-lg" id="message" name="message" rows="6" required></textarea>
+                    <div>
+                        <label for="message" class="block text-lg font-medium text-gray-700">Message</label>
+                        <textarea name="message" id="message" rows="4" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
                     </div>
 
-                    <button type="submit" name="submit" class="btn btn-primary px-5 py-2 text-lg">{{ __('Submit') }}</button>
+                    <div>
+                        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Send
+                        </button>
+                    </div>
                 </form>
             </div>
-
+        </div>
     </div>
 </x-app-layout>

@@ -2,6 +2,8 @@
 
 ## Overview
 
+CarSpotting is een dynamische webapplicatie voor autoliefhebbers, gericht op het ontdekken en delen van exclusieve supercars. Gebruikers kunnen door een indrukwekkende verzameling van bijzondere auto's bladeren en antwoorden vinden op veelgestelde vragen over het spotten van deze fascinerende voertuigen. Voor de meer betrokken leden biedt CarSpotting de admin mogelijkheid: eenmaal gepromoveerd tot admin, krijgen zij toegang tot een uitgebreid beheerderspaneel. Hier kunnen ze niet alleen nieuwe auto's en FAQ's toevoegen, bewerken en verwijderen, maar ook communiceren met gebruikers via een inbox-systeem en andere gebruikers promoten tot admin. Deze interactieve en meeslepende ervaring maakt CarSpotting de ultieme bestemming voor supercar-enthousiasten.
+
 
 ## Prerequisites
 - Php Laravel

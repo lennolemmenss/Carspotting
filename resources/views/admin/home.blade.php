@@ -10,6 +10,7 @@
 
         <br> 
 
+
         <div class="d-flex justify-content-center flex-wrap">
             <div class="card shadow p-4" style="max-width: 300px; margin: 10px;">
                 <div class="card-body text-center">
@@ -46,6 +47,13 @@
                 </div>
             </div>
 
+            <br>
+
+                           <!-- Knop om terug te gaan naar het dashboard -->
+            <div class="text-center mb-5">
+                <a href="{{ route('dashboard') }}" class="lead text-center" style="text-decoration: none;">Go Back to Dashboard</a>
+            </div>
+                
         </div>
     </div>
 </div>

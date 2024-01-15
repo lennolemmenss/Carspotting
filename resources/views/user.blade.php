@@ -35,10 +35,20 @@
                     <h3 class="text-lg font-semibold mb-2">{{ __('Birthday') }}</h3>
                     <p>{{ auth()->user()->birthday }}</p>
                 </div>
-                <a href="{{ route('profile.edit') }}" class="edit-button">
+                <a href="{{ route('profile.edit') }}" class="edit-button mr-4">
                     <x-primary-button>{{ __('Edit') }}</x-primary-button>
                 </a>
+
+                {{-- <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                        {{ __('Log Out') }}
+                    </button>
+                </form> --}}
+             </div>
             </div>
         </div>
+
+        
     </div>
 </x-app-layout>

@@ -7,13 +7,10 @@
     </x-slot>
 
     <div class="container mt-5 d-flex justify-content-center">
-        <div class="card shadow p-4" style="max-width: 500px;">
+    
             <div class="card-header bg-primary text-white text-center">
                 <h5 class="card-title">About Us</h5>
             </div>
-            <div class="card-body">
 
-            </div>
-        </div>
     </div>
 </x-app-layout>

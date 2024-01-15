@@ -8,7 +8,9 @@
     <div class="container mt-5">
         {{-- Check if the authenticated user is an admin --}}
         @if (auth()->check() && auth()->user()->is_admin)
-            <div class="mb-3 text-end"> <!-- Add the text-end class for right alignment -->
+            <div class="mb-3 d-flex justify-content-between">
+                
+                <a href="{{ route('admin.home') }}" class="btn btn-secondary">Admin Homepage</a>
                 <a href="{{ route('admin.create') }}" class="btn btn-primary">Create Post</a>
             </div>
         @endif

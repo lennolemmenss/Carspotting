@@ -25,7 +25,7 @@
 
                         <div>
                             <x-input-label for="avatar" :value="__('Image')" />
-                            <input type="file" name="cover-image" class="mt-1 block w-full" accept="image/*"/>
+                            <input type="file" name="cover-image" class="mt-1 block w-full" accept="image/*" required/>
                             <x-input-error class="mt-2" :messages="$errors->get('avatar')" />
                         </div>
 
@@ -34,7 +34,7 @@
                         {{-- Datum automatisch toevoegen --}}
 
 
-                        <button style="font-weight: 500" type="submit" class="btn btn-primary">{{ __('Plaatsen') }}</button>
+                        <button style="font-weight: 500" type="submit" class="btn btn-primary">{{ __('Post') }}</button>
                     </form>
                 </div>
             </div>

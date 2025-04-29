@@ -1,39 +1,35 @@
-# Carspotting 
+# Carspotting
 
 ## Overview
 
-CarSpotting is een dynamische webapplicatie voor autoliefhebbers, gericht op het ontdekken en delen van exclusieve supercars. Gebruikers kunnen door een indrukwekkende verzameling van bijzondere auto's bladeren en antwoorden vinden op veelgestelde vragen over het spotten van deze fascinerende voertuigen. Voor de meer betrokken leden biedt CarSpotting de admin mogelijkheid: eenmaal gepromoveerd tot admin, krijgen zij toegang tot een uitgebreid beheerderspaneel. Hier kunnen ze niet alleen nieuwe auto's en FAQ's toevoegen, bewerken en verwijderen, maar ook communiceren met gebruikers via een inbox-systeem en andere gebruikers promoten tot admin. Deze interactieve en meeslepende ervaring maakt CarSpotting de ultieme bestemming voor supercar-enthousiasten.
+CarSpotting is a dynamic web application for car enthusiasts, focused on discovering and sharing exclusive supercars. Users can browse through an impressive collection of rare cars and find answers to frequently asked questions about spotting these fascinating vehicles. 
 
+For the more engaged members, CarSpotting offers admin capabilities: once promoted to admin, they gain access to an extensive management panel. Here, they can add, edit, and delete cars and FAQs, communicate with users through an inbox system, and promote other users to admin roles. This interactive and immersive experience makes CarSpotting the ultimate destination for supercar enthusiasts.
 
 ## Prerequisites
-- Php Laravel
+
+- PHP Laravel
 - Composer
 - XAMPP
 - MySQL
 
-
 ## Database Setup
 
-1. Stel uw MySQL-database in en noteer de inloggegevens.
-2. Gebruik het `env` bestand om je databaseverbinding te configureren.
-3. Voer `php artisan migrate` uit voor de tabellen op te zetten.
-
+1. Set up your MySQL database and take note of the login credentials.
+2. Use the `.env` file to configure your database connection.
+3. Run `php artisan migrate` to set up the tables.
 
 ## Seeding the Database
 
-Ga naar de projectmap en voer `php artisan migrate:fresh --seed` uit om je database te vullen met dummy data.
+Navigate to the project folder and run `php artisan migrate:fresh --seed` to populate your database with dummy data.
 
-**Het is essentieel om deze stap uit te voeren voordat er naar de volgende stap kan worden gegaan**
-
-
+**It is essential to complete this step before proceeding further.**
 
 ## Running the Application
 
-1. Start de server met `php artisan serve`.
-2. Surf naar http://localhost:8000 in je webbrowser.
+1. Start the server with `php artisan serve`.
+2. Browse to [http://localhost:8000](http://localhost:8000) in your web browser.
 
 ## Sources
 
-De bronnen vind je terug in de website op de about pagina.
-
-
+The sources can be found on the About page of the website.
